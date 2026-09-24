@@ -20,6 +20,28 @@ The analysis focuses on two business questions:
 2. How can limited inventory replenishment be allocated across shortage
    observations using predicted operational risk as a prioritization signal?
 
+## Key Results
+
+- **56.6%** of observations experienced a logistics delay.
+- **26.1%** of observations had forecast demand greater than available inventory.
+- **Gradient Boosting** achieved the strongest overall 5-fold cross-validation performance with a ROC-AUC of **0.779**.
+- Hyperparameter tuning increased Gradient Boosting cross-validation ROC-AUC to **0.782**.
+- **Heavy traffic** overwhelmingly dominated Gradient Boosting feature importance and was associated with a delay in every Heavy-traffic observation in this dataset.
+- The dataset contained **16,592 units of total inventory shortage** across 261 shortage observations.
+- Under a hypothetical **500-unit replenishment constraint**, the optimization model allocated all available inventory to the highest predicted-risk shortage observations.
+
+### Logistics Delay Distribution
+
+![Distribution of Logistics Delays](images/delay_distribution.png)
+
+### Machine Learning Feature Importance
+
+![Top 10 Gradient Boosting Feature Importances](images/feature_importance.png)
+
+### Optimization Scenario Analysis
+
+![Remaining Inventory Shortage by Replenishment Capacity](images/optimization_scenarios.png)
+
 ## Dataset
 
 The dataset contains 1,000 observations and 16 original variables, including:
